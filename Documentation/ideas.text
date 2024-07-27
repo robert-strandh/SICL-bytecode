@@ -1,0 +1,16 @@
+Make each function have its own bytecode interpreter.
+
+When a breakpoint is set in a function, use a special bytecode
+interpreter for that function.  This special bytecode interpreter
+checks for breakpoints before executing each instruction.  That way,
+only functions that have breakpoints in them will be slowed down.
+
+When a breakpoint is set in a function that is already on the stack,
+change its bytecode interpreter.
+
+Watchpoints could be implemented by intercepting the SET bytecode
+instruction.
+
+Since the bytecode interpreter is specific to each function, an
+extended or modified version of the Maclina bytecodes could be used
+for some functions.
