@@ -2,6 +2,11 @@
 
 size_t header_size = sizeof(struct header);
 
+#define CONS_TAG            0x001
+#define IMMEDIATE_TAG       0x011
+#define STANDARD_OBJECT_TAG 0x101
+#define RACK_TAG            0x111
+
 object
 make_object(void)
 {
