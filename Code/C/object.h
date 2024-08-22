@@ -6,7 +6,7 @@
 #include <assert.h>
 #include <stdint.h>
 
-typedef struct header *object;
+typedef uint64_t object;
 
 typedef struct rack *rack;
 

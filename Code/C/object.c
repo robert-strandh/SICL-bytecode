@@ -10,7 +10,7 @@ size_t header_size = sizeof(struct header);
 object
 make_object(void)
 {
-  return (object) malloc(header_size);
+  return ((object) malloc(header_size)) + STANDARD_OBJECT_TAG;
 }
 
 size_t rack_size = sizeof(struct rack);
@@ -24,23 +24,23 @@ make_rack(size_t size)
 object
 class_of(object obj)
 {
-  return obj -> class;
+  return ((struct header *) (obj - STANDARD_OBJECT_TAG)) -> class;
 }
 
 rack
 rack_of(object obj)
 {
-  return obj -> rack;
+  return ((struct header *) (obj - STANDARD_OBJECT_TAG)) -> rack;
 }
 
 void
 set_class_of(object obj, object class)
 {
-  obj -> class = class;
+   ((struct header *) (obj - STANDARD_OBJECT_TAG)) -> class = class;
 }
 
 void
 set_rack_of(object obj, rack r)
 {
-  obj -> rack = r;
+   ((struct header *) (obj - STANDARD_OBJECT_TAG)) -> rack = r;
 }
