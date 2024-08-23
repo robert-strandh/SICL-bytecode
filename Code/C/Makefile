@@ -1,6 +1,6 @@
 CFLAGS=-g -W -Wall
 
-OBJECT=object.o main.o
+OBJECT=standard-object.o main.o
 
 all: $(OBJECT)
 	gcc -g -o sicl $(OBJECT) -lgmp -lm
@@ -8,5 +8,5 @@ all: $(OBJECT)
 clean:
 	rm -f sicl $(OBJECT)
 
-object.o: object.h
-main.o: object.h
+standard-object.o: standard-object.h
+main.o: standard-object.h
