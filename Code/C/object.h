@@ -22,7 +22,7 @@ struct rack
   object slot_definitions;
 };
 
-extern object make_object(void);
+extern object make_standard_object(void);
 
 extern rack make_rack(size_t size);
 

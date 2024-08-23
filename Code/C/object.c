@@ -8,7 +8,7 @@ size_t header_size = sizeof(struct header);
 #define RACK_TAG            0x111
 
 object
-make_object(void)
+make_standard_object(void)
 {
   return ((object) malloc(header_size)) + STANDARD_OBJECT_TAG;
 }
