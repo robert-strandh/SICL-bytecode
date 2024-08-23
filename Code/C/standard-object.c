@@ -1,4 +1,4 @@
-#include "object.h"
+#include "standard-object.h"
 
 size_t header_size = sizeof(struct header);
 
