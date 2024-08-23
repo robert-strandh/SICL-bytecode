@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "object.h"
+#include "standard-object.h"
 
 int main(void)
 {
