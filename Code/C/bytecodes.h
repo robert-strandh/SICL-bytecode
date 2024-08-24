@@ -41,3 +41,9 @@
    the local variable with the index supplied as the argument of this
    bytecode. */
 #define ASSIGN_ONE_LOCAL 0x07
+
+/* This bytecode creates a new cell and sets its contents to a value
+   popped from the stack.  The new cell is then pushed to the
+   stack. */
+#define MAKE_CELL 0x08
+
