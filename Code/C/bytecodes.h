@@ -47,3 +47,12 @@
    stack. */
 #define MAKE_CELL 0x08
 
+/* This bytecode pops a value off the stack, and that value is known
+   to be a cell.  It then pushes the contents of the cell onto the
+   stack. */
+#define CELL_REFERENCE 0x09
+
+/* This bytecode pops a value off the stack, and that value is known
+   to be a cell.  It then pops another value off the stack and copies
+   that value into the cell. */
+#define CELL_SET 0x0a
