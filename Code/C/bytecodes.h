@@ -98,3 +98,10 @@
    to a special "unsupplied" value that has no particular meaning
    except to the bytecode JUMP_IF_UNSUPPLIED. */
 #define BIND_OPTIONAL_PARAMETERS 0x10
+
+/* This bytecode takes one argument, say N, representing the sum of
+   the number of required parameters and the number of optional
+   parameters.  This bytecode creates a list of all the arguments
+   starting at argument N, and assign it to the local variable with
+   index N.  */
+#define LISTIFY_REMAINING_ARGUMENTS 0x11
