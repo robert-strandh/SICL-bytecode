@@ -84,3 +84,8 @@
 
 /* This bytecode ends the execution of the current function. */
 #define RETURN 0x0e
+
+/* This bytecode takes one argument which is the number of required
+   parameters, say N.  It sets the first N locals to the first N
+   arguments passed to this function. */
+#define BIND_REQUIRED_PARAMETERS 0x0f
