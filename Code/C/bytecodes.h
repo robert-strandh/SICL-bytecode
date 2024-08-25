@@ -72,3 +72,12 @@
    closure vector of size N.  The resulting closure is pushed onto the
    stack.  */
 #define MAKE_UNINITIALIZED_CLOSURE 0x0c
+
+/* This bytecode takes one argument which is the index of a local
+   variable.  That variable contains an uninitialized closure produced
+   by MAKE_UNINITIALIZED_CLOSURE with a template that has a closure
+   size N.  This bytecode pops N values off of the stack and mutates
+   the uninitialized closure so that its closure vector contains those
+   popped values.  The first value popped becomes the last element of
+   the closure vector. */
+#define INITIALIZE_CLOSURE 0x0d
