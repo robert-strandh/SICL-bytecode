@@ -86,6 +86,15 @@
 #define RETURN 0x0e
 
 /* This bytecode takes one argument which is the number of required
-   parameters, say N.  It sets the first N locals to the first N
-   arguments passed to this function. */
+   parameters, say N.  It sets the first N local variables to the
+   first N arguments passed to this function. */
 #define BIND_REQUIRED_PARAMETERS 0x0f
+
+/* This bytecode takes two arguments, say N and M, where N is the
+   number of required parameters and M is the number of optional
+   parameters.  This bytecode sets the M local variables starting at N
+   to the M arguments starting at N.  If there are fewer than M
+   remaining arguments, then the corresponding local variables are set
+   to a special "unsupplied" value that has no particular meaning
+   except to the bytecode JUMP_IF_UNSUPPLIED. */
+#define BIND_OPTIONAL_PARAMETERS 0x10
