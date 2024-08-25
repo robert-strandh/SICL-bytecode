@@ -56,3 +56,19 @@
    to be a cell.  It then pops another value off the stack and copies
    that value into the cell. */
 #define CELL_SET 0x0a
+
+/* This bytecode takes one argument which is an index into the vector
+   of literals.  That literal is a function template with a closure
+   size N.  This bytecode pops N values from the stack and creates a
+   new closure consisting of the template and the popped values as its
+   closure vector, such that the first value popped is the last
+   element in the closure vector.  The resulting closure is pushed
+   onto the stack.  */
+#define MAKE_CLOSURE 0x0b
+
+/* This bytecode takes one argument which is an index into the vector
+   of literals.  That literal is a function template with a closure
+   size N.  This bytecode creates a new closure with an uninitialized
+   closure vector of size N.  The resulting closure is pushed onto the
+   stack.  */
+#define MAKE_UNINITIALIZED_CLOSURE 0x0c
