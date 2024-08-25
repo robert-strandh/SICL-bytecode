@@ -81,3 +81,6 @@
    popped values.  The first value popped becomes the last element of
    the closure vector. */
 #define INITIALIZE_CLOSURE 0x0d
+
+/* This bytecode ends the execution of the current function. */
+#define RETURN 0x0e
