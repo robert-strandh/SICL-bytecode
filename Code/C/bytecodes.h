@@ -126,3 +126,18 @@
    of keywords in the vector of literals, then if the high bit of
    KEY-COUNT-INFO is cleared, then signal a program error. */
 #define PARSE_KEYWORD_ARGUMENTS 0x13
+
+/* Read the next byte as a label.  Unconditionally branch using that
+   label.  The label is a little-endian signed integer and it is
+   relative to the current program counter. */
+#define JUMP_8 0x14
+
+/* Read the next two bytes as a label.  Unconditionally branch using
+   that label.  The label is a little-endian signed integer and it is
+   relative to the current program counter. */
+#define JUMP_16 0x15
+
+/* Read the next three bytes as a label.  Unconditionally branch using
+   that label.  The label is a little-endian signed integer and it is
+   relative to the current program counter. */
+#define JUMP_24 0x16
