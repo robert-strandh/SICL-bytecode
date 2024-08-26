@@ -105,3 +105,24 @@
    starting at argument N, and assign it to the local variable with
    index N.  */
 #define LISTIFY_REMAINING_ARGUMENTS 0x11
+
+/* This bytecode is used to parse keyword arguments.  It takes four
+   arguments.  The first argument, say N, represents the sum of the
+   number of required parameters and the number of optional
+   parameters.  The second argument, say KEY-COUNT-INFO, can be
+   thought of as a single high bit and the remaining bits.  The high
+   bit is set when &ALLOW-OTHER-KEYS is present in the lambda list,
+   and cleared otherwise.  The remaining bits (7 in the normal case,
+   15 in the long version of the bytecode), say KEY-COUNT, represent a
+   count of the number of keywords explicitly mentioned in the lambda
+   list.  The third argument, say KEYS is an index into the vector of
+   literals where KEY-COUNT keywords are located.  The fourth argument
+   to this bytecode, say BASE, is the index of the first local
+   variable to be assigned a keyword argument.  The index of the local
+   variable relative to BASE corresponds to the index of the keyword
+   into the vector of literals relative to KEY.  If the number of
+   remaining arguments is odd, then an error must be signaled.  If
+   there is a keyword argument with a keyword that is not in the list
+   of keywords in the vector of literals, then if the high bit of
+   KEY-COUNT-INFO is cleared, then signal a program error. */
+#define PARSE_KEYWORD_ARGUMENTS 0x13
