@@ -141,3 +141,21 @@
    that label.  The label is a little-endian signed integer and it is
    relative to the current program counter. */
 #define JUMP_24 0x16
+
+/* Read the next byte as a label.  Pop a value from the stack.  If the
+   value is not NIL, branch using the label.  The label is a
+   little-endian signed integer and it is relative to the current
+   program counter. */
+#define JUMP_IF_8 0x17
+
+/* Read the next two bytes as a label.  Pop a value from the stack.
+   If the value is not NIL, branch using the label.  The label is a
+   little-endian signed integer and it is relative to the current
+   program counter. */
+#define JUMP_IF_16 0x18
+
+/* Read the next three bytes as a label.  Pop a value from the stack.
+   If the value is not NIL, branch using the label.  The label is a
+   little-endian signed integer and it is relative to the current
+   program counter. */
+#define JUMP_IF_24 0x19
