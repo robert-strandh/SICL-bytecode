@@ -176,3 +176,15 @@
    a little-endian signed integer and it is relative to the current
    program counter. */
 #define JUMP_IF_SUPPLIED_16 0x1b
+
+/* This bytecode takes one argument, say N, It signals a program error
+   if the number of arguments is not less than or equal to N. */
+#define CHECK_ARGUMENT_COUNT_LESS_OR_EQUAL 0x1c
+
+/* This bytecode takes one argument, say N, It signals a program error
+   if the number of arguments is not greater than or equal to N. */
+#define CHECK_ARGUMENT_COUNT_GREATER_OR_EQUAL 0x1d
+
+/* This bytecode takes one argument, say N, It signals a program error
+   if the number of arguments is not equal to N. */
+#define CHECK_ARGUMENT_COUNT_EQUAL 0x1e
