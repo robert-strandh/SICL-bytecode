@@ -159,3 +159,20 @@
    little-endian signed integer and it is relative to the current
    program counter. */
 #define JUMP_IF_24 0x19
+
+/* This bytecode takes two arguments.  The first argument is an index
+   of a local variable, and the second is a one-byte label.  If the
+   local variable is a value other than the "unsupplied" created by
+   BIND_OPTIONAL_PARAMETERS, then branch using the label. The label is
+   a little-endian signed integer and it is relative to the current
+   program counter. */
+#define JUMP_IF_SUPPLIED_8 0x1a
+
+
+/* This bytecode takes two arguments.  The first argument is an index
+   of a local variable, and the second is a two-byte label.  If the
+   local variable is a value other than the "unsupplied" created by
+   BIND_OPTIONAL_PARAMETERS, then branch using the label. The label is
+   a little-endian signed integer and it is relative to the current
+   program counter. */
+#define JUMP_IF_SUPPLIED_16 0x1b
