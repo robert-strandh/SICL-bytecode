@@ -188,3 +188,7 @@
 /* This bytecode takes one argument, say N, It signals a program error
    if the number of arguments is not equal to N. */
 #define CHECK_ARGUMENT_COUNT_EQUAL 0x1e
+
+/* This bytecode takes no arguments.  It starts a new VARARGS entry
+   using VALUES. */
+#define PUSH_VALUES 0x1f
