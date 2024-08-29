@@ -192,3 +192,7 @@
 /* This bytecode takes no arguments.  It starts a new VARARGS entry
    using VALUES. */
 #define PUSH_VALUES 0x1f
+
+/* This bytecode takes no arguments.  It continues an existing VARARGS
+   entry (created by PUSH_VALUES) using VALUES. */
+#define APPEND_VALUES 0x20
